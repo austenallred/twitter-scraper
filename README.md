@@ -1,21 +1,24 @@
 ##Requirements
 
-This requires the [Twitter gem](https://github.com/sferik/twitter) and a completed Twitter application.
-
-To install the Twitter gem, enter <code> gem install twitter </code> into the command line at the root directory (or use) <code> sudo gem install twitter </code> if you must.
+This requires the [Twitter gem](https://github.com/sferik/twitter) and a registered Twitter application. Follow instructions for the Twitter gem in an empty directory first. 
 
 ##Config
 
 In order to use this repo, you must first [generate a twitter application](https://apps.twitter.com/). Make sure to set the permissions to "read and write" (or optionally "read, write, and send direct messages"). 
 
-To use this repo, enter your twitter app credentials in the <code>user_scraper.rb</code> as follows:
+Enter your twitter app credentials in the <code>user_scraper.rb</code> as follows:
 
 <code>
 client = Twitter::REST::Client.new do |config|
+
   config.consumer_key        = "YOUR_CONSUMER_KEY"
+
   config.consumer_secret     = "YOUR_CONSUMER_SECRET"
+
   config.access_token        = "YOUR_ACCESS_TOKEN"
+
   config.access_token_secret = "YOUR_ACCESS_SECRET"
+  
 end
 </code>
 
