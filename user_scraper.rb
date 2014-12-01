@@ -2,10 +2,10 @@ require 'rubygems'
 require 'twitter'
 
 client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = "YOUR_CONSUMER_KEY"
-  config.consumer_secret     = "YOUR_CONSUMER_SECRET"
-  config.access_token        = "YOUR_ACCESS_TOKEN"
-  config.access_token_secret = "YOUR_ACCESS_SECRET"
+        config.consumer_key        = "YOUR_CONSUMER_KEY"
+        config.consumer_secret     = "YOUR_CONSUMER_SECRET"
+        config.access_token        = "YOUR_ACCESS_TOKEN"
+        config.access_token_secret = "YOUR_ACCESS_SECRET"
 end
 
 #----------------------------------
@@ -13,30 +13,20 @@ end
 filename = "tweeps.txt" 
 
 #Select your keywords to scrape
-keyword1 = "follow back"
-keyword2 = "#teamfollowback"
-keyword3 = "#autofollow"
+keywordList = ["i follow back","#teamfollowback","autofollow"]
 
 #Select how many user IDs each keyword should scrape
-numberOfTweeps = 5000
+numberOfTweeps = 250
 #-----------------------------------
 
-target = open(filename, 'w')
+target = open(filename, 'a+')
 ary = []
 
-puts "Grabbing #{keyword1} tweets"
-client.search("#{keyword1} -rt", result_type: "recent").take(numberOfTweeps).collect do |tweet|
-  ary.push(tweet.user.screen_name)
-end
-
-puts "Grabbing #{keyword2} tweets"
-client.search("#{keyword2} -rt", result_type: "recent").take(numberOfTweeps).collect do |tweet|
-  ary.push(tweet.user.screen_name)
-end
-
-puts "Grabbing #{keyword3} tweets"
-client.search("#{keyword3} -rt", result_type: "recent").take(numberOfTweeps).collect do |tweet|
-  ary.push(tweet.user.screen_name)
+keywordList.each do |keyword|
+  puts "Grabbing #{numberOfTweeps} #{keyword} tweets"
+  client.search("#{keyword} -rt", result_type: "recent").take(numberOfTweeps).collect do |tweet|
+    ary.push(tweet.user.screen_name)
+  end
 end
 
 unique = ary.uniq
@@ -47,4 +37,4 @@ end
 
 target.close
 
-puts "All finished"
+puts "All finished. The usernames have been saved in #{filename}"
