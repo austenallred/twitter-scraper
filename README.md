@@ -8,19 +8,12 @@ In order to use this repo, you must first [generate a twitter application](https
 
 Enter your twitter app credentials in the <code>user_scraper.rb</code> as follows:
 
-<code>
-client = Twitter::REST::Client.new do |config|
-
-  config.consumer_key        = "YOUR_CONSUMER_KEY"
-
-  config.consumer_secret     = "YOUR_CONSUMER_SECRET"
-
-  config.access_token        = "YOUR_ACCESS_TOKEN"
-
-  config.access_token_secret = "YOUR_ACCESS_SECRET"
-  
-end
-</code>
+        client = Twitter::REST::Client.new do |config|
+            config.consumer_key        = "YOUR_CONSUMER_KEY"
+            config.consumer_secret     = "YOUR_CONSUMER_SECRET"
+            config.access_token        = "YOUR_ACCESS_TOKEN"
+            config.access_token_secret = "YOUR_ACCESS_SECRET"
+        end
 
 ##Usage
 
