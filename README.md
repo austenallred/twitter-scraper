@@ -17,7 +17,13 @@ Enter your twitter app credentials in the <code>user_scraper.rb</code> as follow
 
 ##Usage
 
-There are two modules - the tweet scraper and the user scraper. Use the user scraper to find users who are tweeting about certain keywords. Use the tweet scraper to scrape the tweets that certain users are tweeting.
+There are three modules - the tweet scraper, the user scraper, and the follower.
+
+Use the tweet scraper to scrape tweets of other users. You can tweet those as your own, or use them however you'd like.
+
+The user scraper searches for keywords and scrapes anyone who has tweeted using that keyword.
+
+The follower takes the scraped users and follows them. You can swap out that file for any file of usernames.
 
 There are no limits on numbers other than those put in place by Twitter rate limiting. Those should be plenty for most non-spammy purposes, so there's no multi-threading or proxy support.
 
@@ -29,6 +35,6 @@ There are three fields that are recommended for editing.
 
 * The third, <code>numberOfTweeps = 5000</code> determines how many twitter usernames will be scraped per keyword.
 
-To run the program, go back to your command line in the root directory of the repo, and ener <code>ruby user_scraper.rb</code>
+To run the program, go back to your command line in the root directory of the repository, and ener <code>ruby user_scraper.rb</code>
 
 
