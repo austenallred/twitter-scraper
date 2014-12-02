@@ -17,6 +17,10 @@ Enter your twitter app credentials in the <code>user_scraper.rb</code> as follow
 
 ##Usage
 
+There are two modules - the tweet scraper and the user scraper. Use the user scraper to find users who are tweeting about certain keywords. Use the tweet scraper to scrape the tweets that certain users are tweeting.
+
+There are no limits on numbers other than those put in place by Twitter rate limiting. Those should be plenty for most non-spammy purposes, so there's no multi-threading or proxy support.
+
 There are three fields that are recommended for editing. 
 
 * The first, <code>filename = "tweeps.txt"</code>, determines where the outputted usernames will be saved. 

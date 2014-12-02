@@ -2,10 +2,10 @@ require 'rubygems'
 require 'twitter'
 
 client = Twitter::REST::Client.new do |config|
-        config.consumer_key        = "YOUR_CONSUMER_KEY"
-        config.consumer_secret     = "YOUR_CONSUMER_SECRET"
-        config.access_token        = "YOUR_ACCESS_TOKEN"
-        config.access_token_secret = "YOUR_ACCESS_SECRET"
+  config.consumer_key        = "YOUR_CONSUMER_KEY"
+  config.consumer_secret     = "YOUR_CONSUMER_SECRET"
+  config.access_token        = "YOUR_ACCESS_TOKEN"
+  config.access_token_secret = "YOUR_ACCESS_SECRET"
 end
 
 #----------------------------------
@@ -13,10 +13,10 @@ end
 filename = "tweeps.txt" 
 
 #Select your keywords to scrape
-keywordList = ["i follow back","#teamfollowback","autofollow"]
+keywordList = ["autofollowback","followback","autofollow"]
 
 #Select how many user IDs each keyword should scrape
-numberOfTweeps = 250
+numberOfTweeps = 7500
 #-----------------------------------
 
 target = open(filename, 'a+')

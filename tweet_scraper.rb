@@ -2,10 +2,10 @@ require 'rubygems'
 require 'twitter'
 
 client = Twitter::REST::Client.new do |config|
-        config.consumer_key        = "YOUR_CONSUMER_KEY"
-        config.consumer_secret     = "YOUR_CONSUMER_SECRET"
-        config.access_token        = "YOUR_ACCESS_TOKEN"
-        config.access_token_secret = "YOUR_ACCESS_SECRET"
+  config.consumer_key        = "YOUR_CONSUMER_KEY"
+  config.consumer_secret     = "YOUR_CONSUMER_SECRET"
+  config.access_token        = "YOUR_ACCESS_TOKEN"
+  config.access_token_secret = "YOUR_ACCESS_SECRET"
 end
 
 #----------------------------------
@@ -24,7 +24,7 @@ ary = []
 
 username_list.each do |user|
   puts "Now scraping tweets for #{user}"
-  client.user_timeline("#{user}", options= {count: "#{tweetCount}", include_rts: false, exclude_replies: true}).take(10).collect do |tweet|
+  client.user_timeline("#{user}", options= {count: "#{tweetCount}", include_rts: false, exclude_replies: true}).take(tweetCount).collect do |tweet|
   ary.push(tweet.text)
   end
 end
