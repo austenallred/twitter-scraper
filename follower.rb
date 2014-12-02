@@ -10,18 +10,21 @@ end
 
 #----------------------------------
 # enter the name of the file you are pulling the user IDs from
-filename = "tweets.txt"
+filename = "tweeps.txt"
 
 # enter how long you want the delay to be between each follow
 delay = 3
 #----------------------------------
 
-
-if ary.length = 0
+ary = []
+if ary.count == 0
   f = open(filename, 'r')
   names = f.read
   ary = names.split("\n")
-  puts ary.inspect
+  puts "preparing to follow -> " + ary.inspect
+  if ary.count == 0
+    puts "You need to add some usernames to #{filename} in order to follow them"
+  end
 end
 
 ary.each do |username|
