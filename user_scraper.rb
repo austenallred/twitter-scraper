@@ -16,7 +16,7 @@ filename = "tweeps.txt"
 keywordList = ["autofollowback","followback","autofollow"]
 
 #Select how many user IDs each keyword should scrape
-numberOfTweeps = 7500
+numberOfTweeps = 10
 #-----------------------------------
 
 target = open(filename, 'a+')
