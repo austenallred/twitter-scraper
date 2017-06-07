@@ -1,8 +1,8 @@
-##Requirements
+## Requirements
 
 This requires the [Twitter gem](https://github.com/sferik/twitter) and a registered Twitter application. Follow instructions for the Twitter gem in an empty directory first. 
 
-##Config
+## Config
 
 In order to use this repo, you must first [generate a twitter application](https://apps.twitter.com/). Make sure to set the permissions to "read and write" (or optionally "read, write, and send direct messages"). 
 
@@ -15,7 +15,7 @@ Enter your twitter app credentials in the <code>user_scraper.rb</code> as follow
             config.access_token_secret = "YOUR_ACCESS_SECRET"
         end
 
-##Usage
+## Usage
 
 There are three modules - the tweet scraper, the user scraper, and the follower.
 
